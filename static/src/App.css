@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+.navbar {
+	padding: 0.8rem;
+}
+.navbar-nav li {
+	padding-right: 20px;
+}
+.nav-link {
+	font-size: 1.2em !important;
+}
+
+.btn-primary {
+	background-color: #6648b1;
+	border: 1px solid #6648b1;
+}
+.btn-primary:hover {
+	background-color: #563d7c;
+	border: 1px solid #563d7c;
+}
+
+.social a {
+	font-size: 1.5rem; /* makes icons larger */
+	padding: 0.4rem;
+}
+.fa-facebook:hover, .fa-twitter:hover,
+.fa-linkedin:hover, .fa-envelope:hover, .fa-github:hover {
+	color: #b0b0b0;
+}
+.fa-facebook {
+	color: #3b5998;
+}
+.fa-twitter {
+	color: #00aced;
+}
+.fa-linkedin {
+	color: #1178b3;
+}
+.fa-envelope {
+	color: #bf3b31;
+}
+.fa-github {
+	color: #24292e;
+}
+.fa-instagram {
+	color: #517fa4;
+}
+.fa-youtube {
+	color: #bb0000;
+}
