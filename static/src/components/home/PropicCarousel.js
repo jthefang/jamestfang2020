@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Carousel, CarouselItem, CarouselIndicators} from 'reactstrap';
-import biopic1 from '../images/biopics/biopic1.jpg';
-import biopic2 from '../images/biopics/biopic2.jpg';
-import biopic3 from '../images/biopics/biopic3.jpg';
-import biopic4 from '../images/biopics/biopic4.jpg';
+import biopic1 from '../../images/biopics/biopic1.jpg';
+import biopic2 from '../../images/biopics/biopic2.jpg';
+import biopic3 from '../../images/biopics/biopic3.jpg';
+import biopic4 from '../../images/biopics/biopic4.jpg';
 
 const items = [
   { src: biopic1, altText: 'Slide 1', caption: 'Slide 1' },

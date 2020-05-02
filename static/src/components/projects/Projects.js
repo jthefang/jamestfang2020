@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import ProjectCard from './ProjectCard';
 
-import pacifism from '../images/projects/pacifism.gif';
-import maze from '../images/projects/maze.gif';
-import game24 from '../images/projects/24.gif';
-import robocar from '../images/projects/robocar.jpg';
+import pacifism from '../../images/projects/pacifism.gif';
+import maze from '../../images/projects/maze.gif';
+import game24 from '../../images/projects/24.gif';
+import robocar from '../../images/projects/robocar.jpg';
 
 const projects = [
   {

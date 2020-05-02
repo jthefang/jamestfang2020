@@ -3,7 +3,7 @@ import {
   Col, Row, 
   Collapse, CardBody, Card, CardHeader 
 } from 'reactstrap';
-import { folders } from './notes/NotesData';
+import { folders } from './NotesData';
 
 export default class Notes extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ export default class Notes extends Component {
           <h1 className="display-5 mb-3">Notes</h1>
           {folders.map((folder, index) => (
             <Card key={index} className="mb-3">
-              <CardHeader onClick={this.toggle} data-event={index}>{folder.title}</CardHeader>
+              <CardHeader className="btn" onClick={this.toggle} data-event={index}>{folder.title}</CardHeader>
               <Collapse isOpen={currIdx === index}>
                 <CardBody>
                   {folder.notes.map((note, index) => (

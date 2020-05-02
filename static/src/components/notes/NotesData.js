@@ -1,5 +1,25 @@
 export const folders = [
   {
+    title: "CS 170: Algorithms",
+    notes: [
+      { "title": "Divide and conquer: fibonacci and multiplication", "link": "http://jamestfang.com/notes/170/divide_and_conquer_0.pdf" }, 
+      { "title": "Divide and conquer: general algorithm design", "link": "http://jamestfang.com/notes/170/divide_and_conquer_1.pdf" }, 
+      { "title": "Fast fourier transform (FFT)", "link": "http://jamestfang.com/notes/170/fft.pdf" }, 
+      { "title": "Graphs - DFS, DAGs, SCCs", "link": "http://jamestfang.com/notes/170/graph_DFS_DAG_SCC.pdf" }, 
+      { "title": "Graphs - shortest paths", "link": "http://jamestfang.com/notes/170/graph_shortest_paths.pdf" }, 
+      { "title": "Graphs - minimum spanning tree (MST)", "link": "http://jamestfang.com/notes/170/graph_mst.pdf" }, 
+      { "title": "Greedy algorithms", "link": "http://jamestfang.com/notes/170/greedy_algorithms.pdf" }, 
+      { "title": "Dynamic programming", "link": "http://jamestfang.com/notes/170/dp.pdf" }, 
+      { "title": "Dynamic programming continued", "link": "http://jamestfang.com/notes/170/dp_cont.pdf" }, 
+      { "title": "Linear programming", "link": "http://jamestfang.com/notes/170/lp.pdf" }, 
+      { "title": "Duality and reductions", "link": "http://jamestfang.com/notes/170/duality_reductions.pdf" }, 
+      { "title": "NP completeness", "link": "http://jamestfang.com/notes/170/np_completeness.pdf" }, 
+      { "title": "NP completeness continued", "link": "http://jamestfang.com/notes/170/np_completeness_cont.pdf" }, 
+      { "title": "Approximation algrithms", "link": "http://jamestfang.com/notes/170/approximation_alg.pdf" }, 
+      { "title": "Primality and randomness", "link": "http://jamestfang.com/notes/170/primality_randomness.pdf" }
+    ],
+  }, // CS170
+  {
     title: "CS 189: Machine Learning",
     notes: [
       { "title": "Introduction to Classification", "link": "http://jamestfang.com/notes/189/intro_classifiers.pdf" }, 
@@ -61,26 +81,6 @@ export const folders = [
       { "title": "Feedback control", "link": "http://jamestfang.com/notes/120/fdb_ctrl.pdf" }
     ],
   }, // EECS120
-  {
-    title: "CS 170: Algorithms",
-    notes: [
-      { "title": "Divide and conquer: fibonacci and multiplication", "link": "http://jamestfang.com/notes/170/divide_and_conquer_0.pdf" }, 
-      { "title": "Divide and conquer: general algorithm design", "link": "http://jamestfang.com/notes/170/divide_and_conquer_1.pdf" }, 
-      { "title": "Fast fourier transform (FFT)", "link": "http://jamestfang.com/notes/170/fft.pdf" }, 
-      { "title": "Graphs - DFS, DAGs, SCCs", "link": "http://jamestfang.com/notes/170/graph_DFS_DAG_SCC.pdf" }, 
-      { "title": "Graphs - shortest paths", "link": "http://jamestfang.com/notes/170/graph_shortest_paths.pdf" }, 
-      { "title": "Graphs - minimum spanning tree (MST)", "link": "http://jamestfang.com/notes/170/graph_mst.pdf" }, 
-      { "title": "Greedy algorithms", "link": "http://jamestfang.com/notes/170/greedy_algorithms.pdf" }, 
-      { "title": "Dynamic programming", "link": "http://jamestfang.com/notes/170/dp.pdf" }, 
-      { "title": "Dynamic programming continued", "link": "http://jamestfang.com/notes/170/dp_cont.pdf" }, 
-      { "title": "Linear programming", "link": "http://jamestfang.com/notes/170/lp.pdf" }, 
-      { "title": "Duality and reductions", "link": "http://jamestfang.com/notes/170/duality_reductions.pdf" }, 
-      { "title": "NP completeness", "link": "http://jamestfang.com/notes/170/np_completeness.pdf" }, 
-      { "title": "NP completeness continued", "link": "http://jamestfang.com/notes/170/np_completeness_cont.pdf" }, 
-      { "title": "Approximation algrithms", "link": "http://jamestfang.com/notes/170/approximation_alg.pdf" }, 
-      { "title": "Primality and randomness", "link": "http://jamestfang.com/notes/170/primality_randomness.pdf" }
-    ],
-  }, // CS170
   {
     title: "CS 186: Databases",
     notes: [
