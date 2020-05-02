@@ -60,7 +60,7 @@ export default class Projects extends Component {
 
     return (
       <div className="container-fluid my-5 px-md-4">
-        <div className="row justify-content-center">
+        <div className="row">
           {projectCards}
         </div>
       </div>

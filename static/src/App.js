@@ -7,6 +7,7 @@ import AppNavbar from './components/AppNavbar';
 import Home from './components/Home';
 import Projects from './components/Projects';
 import Summaries from './components/Summaries';
+import Notes from './components/Notes';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/projects" exact component={Projects} />
         <Route path="/summaries" exact component={Summaries} />
+        <Route path="/notes" exact component={Notes} />
       </div>
     </Router>
   );
