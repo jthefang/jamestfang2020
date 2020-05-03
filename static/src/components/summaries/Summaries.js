@@ -21,13 +21,13 @@ export default class Summaries extends Component {
   render() {
     return (
       <Row className="justify-content-center">
-        {books.map(book => (
-          <Col className="my-5 px-5" lg="7">
+        {books.map((book, index) => (
+          <Col key={index} className="my-5 px-5" lg="7">
             <h2>{book.title}</h2>
             <p><small><a href={book.href} target="_blank" rel="noopener noreferrer">Goodreads</a></small></p>
             <p><em>{book.rating.value}/5: {book.rating.reason}</em></p>
-            <p>{book.bullets.map(bullet => (
-              <li>{bullet}</li>
+            <p>{book.bullets.map((bullet, idx) => (
+              <li key={idx}>{bullet}</li>
             ))}</p>
           </Col>
         ))}

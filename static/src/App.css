@@ -56,3 +56,9 @@ body {
 .fa-youtube {
 	color: #bb0000;
 }
+
+/************** Resume **************/
+.resume-icon {
+	font-size: 2rem; /* makes icons larger */
+	margin-right: 1rem;
+}

@@ -27,6 +27,7 @@ export default class AppNavbar extends Component {
               <NavItem><NavLink href="/projects">Projects</NavLink></NavItem>
               <NavItem><NavLink href="/summaries">Summaries</NavLink></NavItem>
               <NavItem><NavLink href="/notes">Notes</NavLink></NavItem>
+              <NavItem><NavLink href="/resume">Resume</NavLink></NavItem>
             </Nav>
           </Collapse>
         </Container>
