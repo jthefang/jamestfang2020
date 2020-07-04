@@ -55,6 +55,35 @@ export const folders = [
     ],
   }, // CS189
   {
+    title: "CS 162: Operating Systems",
+    notes: [
+      { "title": "Fundamental concepts of operating systems", "link": "http://jamestfang.com/notes/162/1intro_fundamental_os_concepts.pdf" }, 
+      { "title": "Processes: OS representation & syscalls", "link": "http://jamestfang.com/notes/162/2processes_syscalls.pdf" }, 
+      { "title": "Threads & concurrency", "link": "http://jamestfang.com/notes/162/3threads.pdf" }, 
+      { "title": "Intro to file systems", "link": "http://jamestfang.com/notes/162/4filesystems.pdf" }, 
+      { "title": "Scheduling", "link": "http://jamestfang.com/notes/162/5scheduling.pdf" }, 
+      { "title": "Synchronization operations", "link": "http://jamestfang.com/notes/162/6synchronization.pdf" }, 
+      { "title": "Sockets: intro to communication", "link": "http://jamestfang.com/notes/162/7sockets.pdf" }, 
+      { "title": "Interprocess communication & remote procedure calls", "link": "http://jamestfang.com/notes/162/8rpcs.pdf" }, 
+      { "title": "Fair scheduling & system performance", "link": "http://jamestfang.com/notes/162/9performance_fair_scheduling.pdf" }, 
+      { "title": "Deadlock, scheduling & synchronization", "link": "http://jamestfang.com/notes/162/10deadlock.pdf" }, 
+      { "title": "Address translation", "link": "http://jamestfang.com/notes/162/11address_translation.pdf" }, 
+      { "title": "Virtual memory", "link": "http://jamestfang.com/notes/162/12virtual_memory.pdf" }, 
+      { "title": "Demand paging", "link": "http://jamestfang.com/notes/162/13demand_paging.pdf" }, 
+      { "title": "Virtual machines", "link": "http://jamestfang.com/notes/162/14virtual_machines.pdf" }, 
+      { "title": "IO subsystems", "link": "http://jamestfang.com/notes/162/15io.pdf" }, 
+      { "title": "Data storage to file systems", "link": "http://jamestfang.com/notes/162/16fs_data_storage.pdf" }, 
+      { "title": "Filesystems", "link": "http://jamestfang.com/notes/162/17filesystems.pdf" }, 
+      { "title": "Buffering & reliability in filesystems", "link": "http://jamestfang.com/notes/162/18buffering_reliability_fs.pdf" }, 
+      { "title": "Distributed filesystems", "link": "http://jamestfang.com/notes/162/19distributed_fs.pdf" }, 
+      { "title": "Distributed KV store, 2PC", "link": "http://jamestfang.com/notes/162/20distributed_kv_2pc.pdf" }, 
+      { "title": "Cloud applications", "link": "http://jamestfang.com/notes/162/21cloud_apps.pdf" }, 
+      { "title": "TCP & e2e architecture", "link": "http://jamestfang.com/notes/162/22tcp.pdf" }, 
+      { "title": "Security: authentication & authorization", "link": "http://jamestfang.com/notes/162/23security.pdf" }, 
+      { "title": "OS perspective on Android", "link": "http://jamestfang.com/notes/162/24android.pdf" }
+    ]
+  },
+  {
     title: "EECS 120: Signals & Systems",
     notes: [
       { "title": "Complex exponential (review)", "link": "http://jamestfang.com/notes/120/complex_e.pdf" }, 

@@ -25,7 +25,7 @@ export default class Notes extends Component {
   render() {
     const { currIdx } = this.state;
     return (
-      <Row className="my-5 px-3 justify-content-center">
+      <Row className="my-5 pb-5 px-3 justify-content-center">
         <Col md="10" xl="6">
           <h1 className="display-5 mb-3">Notes</h1>
           {folders.map((folder, index) => (

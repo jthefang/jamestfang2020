@@ -11,7 +11,7 @@ const Education = props => (
     </Col>
     <Col xs="12">
       <p className="lead mb-0">University of California Berkeley, 2020</p>
-      <p>B.S. <em>Electrical Engineering & Computer Science (EECS)</em>, GPA: 3.83/4</p>
+      <p>B.S. <em>Electrical Engineering & Computer Science (EECS)</em>, GPA: 3.84/4</p>
     </Col>
   </Row>
 );
@@ -91,7 +91,7 @@ const Skills = props => (
     </Col>
     <Col className="mt-3">
       <p className="mb-0"><b>Programming</b>: Python, Java, C, C#, JavaScript, Go</p>
-      <p className="mb-0"><b>Web</b>: React, Redux, MongoDB, Express, Node.js, SQL</p>
+      <p className="mb-0"><b>Web</b>: React, Redux, Angular, MongoDB, Express, Node.js, Firebase, SQL</p>
       <p className="mb-0"><b>Data science</b>: Tensorflow, sklearn, Pandas, matplotlib, jupyter</p>
       <p className="mb-0"><b>Tools</b>: git, bash, npm, yarn, VSCode, Linux management, Unity</p>
     </Col>
@@ -101,7 +101,7 @@ const Skills = props => (
 export default class Resume extends Component {
   render() {
     return (
-      <Container className="my-5 mr-xs-3">
+      <Container className="my-5 pb-5 mr-xs-3">
         <Education />
         <hr className="mb-4" />
         <Experience />

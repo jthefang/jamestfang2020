@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const tasks = require('./server/routes/api/tasks');
-const taskColumns = require('./server/routes/api/taskColumns');
+const blogposts = require('./server/routes/api/blogposts');
 
 const app = express();
 //Bodyparser Middleware
@@ -18,8 +17,7 @@ mongoose.connect(db)
   .catch(err => console.log(err));
 
 //Use Routes
-app.use('/api/tasks', tasks);
-app.use('/api/task-columns', taskColumns);
+app.use('/api/blogposts', blogposts);
 
 //Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
@@ -31,5 +29,5 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const port = process.env.PORT || 3217; //env.PORT is Heroku env var
+const port = process.env.PORT || 5005; //env.PORT is Heroku env var
 app.listen(port, () => console.log(`Server started on port ${port}`));

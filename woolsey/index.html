@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>House chores monkeys</title>
+	<meta charset='utf-8' /><link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+	<script src='lib/jquery.min.js'></script>
+	<script src='lib/moment.min.js'></script>
+	<script src='fullcalendar/fullcalendar.js'></script>
+	<script>
+	  	$(document).ready(function() {
+	  		let monkeys = ["James", "Rodney", "Maninder", "Diego", "Matt", "Gabriel", "Ryan"];
+	  		let colorCs = ["#A569BD", "#16A085", "#FA8072", "#C0392B", "#95A5A6", "#34495E", "#DF7EDC", "#5B8FFF"];
+	  		let chores = ["Moving furniture + sweeping hallways", "Clean sink + counter", "Clean stove + counter", "Mopping", "Sweeping kitchen + living room", "Clean counter + microwave"];
+		    
+		    let startDate = "2019-09-01";
+		    let endDate = "2019-12-14";
+		    let trashAndCleaningDays = generateTrashAndCleaningDaysFrom(startDate, endDate, monkeys, chores);
+		    let sinkEvents = generateSinkPicturesFrom(startDate, endDate, monkeys, colorCs);
+		    let trashAndCleaningEvents = trashAndCleaningDays[0];
+		    let cleaningDayAssignments = trashAndCleaningDays[1];
+	  		let choreEvents = sinkEvents.concat(trashAndCleaningEvents);
+
+		    $('#calendar').fullCalendar({
+			    header: {
+			        left: 'prev,next today',
+			        center: 'title',
+			        right: 'month,basicWeek'
+			    },
+			    //defaultDate: '2018-03-12',
+			    navLinks: true, // can click day/week names to navigate views
+			    editable: true,
+			    eventLimit: true, // allow "more" link when too many events
+			    events: choreEvents,
+			    eventClick: function(calEvent, jsEvent, view) {
+			    	if (calEvent.title.includes("Chore generator")) {
+			    		let cleaningWeekIndex = parseInt(calEvent.title.split(":")[1]);
+			    		let assignments = cleaningDayAssignments[cleaningWeekIndex];
+			    		var assignmentFormat = "";
+			    		for (var i = 0; i < assignments.length; i++) {
+			    			let currPerson = assignments[i][0];
+			    			let currChore = assignments[i][1];
+			    			assignmentFormat += currPerson + ": " + currChore;
+			    			if (i < assignments.length - 1) {
+			    				assignmentFormat += "\n";
+			    			}
+			    		}
+				    	alert(assignmentFormat);
+			    	}
+				}
+		    });
+	  	});
+
+	  	function generateSinkPicturesFrom(startDate, endDate, people, colorCodes) {
+	  		var sinkEvents = [];
+	  		let currDate = moment(startDate);
+
+	  		var i = 0;
+	  		while (currDate.isBefore(endDate)) {
+	  			let currPerson = people[i % people.length];
+	  			let sinkEvent = {
+	  				title: currPerson,
+	  				start: currDate.format("YYYY-MM-DD"),
+	  				color: colorCodes[i % people.length]
+	  			};
+	  			sinkEvents.push(sinkEvent);
+
+	  			i += 1;
+	  			currDate = currDate.add(1, 'days');
+	  		}
+	  		return sinkEvents;
+	  	}
+
+	  	/**
+	  		Input dates should be formatted as "YYYY-MM-DD"
+	  			people is an array of names (of people presumably)
+
+	  		Returns weekly trash events from start to end dates, cycling through the people array 
+	  	*/
+	  	function generateTrashAndCleaningDaysFrom(startDate, endDate, people, chores) {
+	  		let intervals = getWeekIntervalsFrom(startDate, endDate);
+	  		let choreEvents = [];
+	  		let choreMatches = [];
+	  		for (var i = 0; i < intervals.length; i++) {
+	  			let trashPersonIndex = people.length - 1 - (i % people.length);
+	  			let currTrashPerson = people[trashPersonIndex];
+	  			let currInterval = intervals[i];
+	  			let trashEvent = {
+	  				title: currTrashPerson,
+	  				start: currInterval[0],
+	  				end: currInterval[1]
+	  			};
+	  			choreEvents.push(trashEvent);
+
+	  			let choreEvent = {
+	  				title: "Chore generator week:" + i,
+	  				start: currInterval[0] + "T22:00:00",
+	  				color: "orange"
+	  			};
+	  			choreEvents.push(choreEvent);
+
+	  			//generate chore mapping for this week
+	  			let choreMatch = [];
+	  			for (var j = 0; j < people.length; j++) {
+	  				let currChorePerson = people[j];
+	  				if (currChorePerson === currTrashPerson) {
+	  					//skip this guy
+	  				} else {
+	  					let choreIndex = (i + j) % chores.length;
+	  					choreMatch.push([currChorePerson, chores[choreIndex]]);
+	  				}
+	  			}
+	  			choreMatches.push(choreMatch);
+	  		}
+	  		return [choreEvents, choreMatches];
+	  	}
+
+	  	/**
+	  		Input dates should be formatted as "YYYY-MM-DD"
+			returns array of intervals: [ [wk_start, wk_end], ... ] 
+				where wk_start is the Sunday and wk_end is the Saturday of a week
+	  	*/
+	  	function getWeekIntervalsFrom(startDate, endDate) {
+	  		let currDate = moment(startDate);
+	  		var intervals = [];
+	  		while (currDate.isBefore(endDate)) {
+	  			let nextInterval = getNextIntervalFrom(currDate);
+	  			intervals.push(nextInterval);
+	  			currDate = moment(nextInterval[1]);
+	  		}
+	  		return intervals;
+	  	}
+
+	  	function getNextIntervalFrom(date) {
+	  		let sunday = 0;
+	  		let saturday = 6;
+	  		let nextSunday = getNextDayFrom(sunday, date);
+	  		let nextSaturday = getNextDayFrom(saturday, nextSunday);
+	  		return [nextSunday.format('YYYY-MM-DD'), nextSaturday.add(1, 'days').format('YYYY-MM-DD')];
+	  	}
+
+	  	/**
+	  		Day = day of the week (0 - 6, Sun - Sat)
+	  		Date = a moment
+
+	  		Returns the moment of (the next day of the week) from (date)
+	  			e.g. the next Sunday from 2018-10-22
+	  	*/
+	  	function getNextDayFrom(day, date) {
+	  		// if we haven't yet passed the day of the week that I need:
+	  		if (date.isoWeekday() <= day) { 
+			  	// then just give me this week's instance of that day
+			  	return date.isoWeekday(day);
+			} else {
+			  	// otherwise, give me *next week's* instance of that same day
+			  	return moment(date).add(1, 'weeks').isoWeekday(day);
+			}
+	  	}
+
+	</script>
+	<style>
+	  	body {
+		    margin: 40px 10px;
+		    padding: 0;
+		    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		    font-size: 14px;
+	  	}
+
+	  	#calendar {
+		    max-width: 900px;
+		    margin: 0 auto;
+	  	}
+
+	  	.fc-today {
+	  		background: #FF3636 !important;
+	  	}
+	</style>
+</head>
+<body>
+  	<div id='calendar'></div>
+</body>
+</html>
