@@ -18,6 +18,14 @@ const Education = props => (
 
 const experienceData = [
   {
+    company: "SpaceX",
+    position: "Software Engineer",
+    dates: { from: "Aug 2020", to: "Present" },
+    bullets: [
+      "Building software for Starlink User Terminal",
+    ],
+  },
+  {
     company: "Berkeley Institute for Data Science",
     position: "Data Engineer",
     dates: { from: "Aug", to: "Dec 2019" },
@@ -54,14 +62,6 @@ const experienceData = [
       "Rahtz M., Fang J. et. al. “Towards an IDE for agent design.” LBI NeurIPS 2018.",
     ],
   },
-  {
-    company: "West Oakland Environmental Indicators Project",
-    position: "Front End Developer",
-    dates: { from: "Jan", to: "May 2018" },
-    bullets: [
-      "React developer for web app to collect and display data on truck traffic and air quality in West Oakland",
-    ],
-  },
 ];
 const Experience = props => (
   <Row>
@@ -91,8 +91,8 @@ const Skills = props => (
     </Col>
     <Col className="mt-3">
       <p className="mb-0"><b>Programming</b>: Python, Java, C, C#, JavaScript, Go</p>
-      <p className="mb-0"><b>Web</b>: React, Redux, Angular, MongoDB, Express, Node.js, Firebase, SQL</p>
-      <p className="mb-0"><b>Data science</b>: Tensorflow, sklearn, Pandas, matplotlib, jupyter</p>
+      <p className="mb-0"><b>Web</b>: Flask, React, Redux, Angular, MongoDB, Express, Node.js, Firebase, SQL</p>
+      <p className="mb-0"><b>Data science</b>: Tensorflow, sklearn, Pandas, Plotly/Dash, jupyter</p>
       <p className="mb-0"><b>Tools</b>: git, bash, npm, yarn, VSCode, Linux management, Unity</p>
     </Col>
   </Row>
